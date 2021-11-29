@@ -42,9 +42,18 @@ public class VentanaEmpresa extends JFrame {
         JLabel labelRut = new JLabel ();
         labelRut.setText ("Rut:");
 
+        JLabel labelAfp = new JLabel ();
+        labelAfp.setText ("AFP: ");
+
+        JLabel labelIsapre = new JLabel ();
+        labelIsapre.setText ("Isapre");
+
         JTextField textNombre = new JTextField (10);
         JTextField textApellido = new JTextField (10);
         JTextField textRut = new JTextField (10);
+        JTextField textAfp = new JTextField (10);
+        JTextField textIsapre = new JTextField (10);
+
 
         JButton botonAgregar = new JButton ();
         botonAgregar.setText ("Agregar Persona.");
@@ -60,6 +69,10 @@ public class VentanaEmpresa extends JFrame {
         panel.add (textApellido);
         panel.add (labelRut);
         panel.add (textRut);
+        panel.add (labelAfp);
+        panel.add (textAfp);
+        panel.add (labelIsapre);
+        panel.add (textIsapre);
         panel.add (botonAgregar);
         panel.add (botonLimpiar);
         panel.add (botonSalir);
@@ -68,7 +81,7 @@ public class VentanaEmpresa extends JFrame {
         botonAgregar.addActionListener (new ActionListener () {
             @Override
             public void actionPerformed(ActionEvent e) {
-            Trabajador trabajdor = new Trabajador (textNombre.getText (), textApellido.getText (),textRut.getText (),"","");
+            Trabajador trabajdor = new Trabajador (textNombre.getText (), textApellido.getText (),textRut.getText (),textIsapre.getText (),textAfp.getText ());
             trabajdor.getTrabajadores ().add (trabajdor);
             JOptionPane.showMessageDialog (null, "Se ha añadido satisfactoriamente.");
             }
