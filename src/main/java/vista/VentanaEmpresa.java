@@ -21,14 +21,11 @@ public class VentanaEmpresa extends JFrame {
     private JLabel labelIsapre;
     private JPanel panel;
 
-
     public VentanaEmpresa(){
         initVentanaEmpresa ();
-        setSize (700,500);
+        setSize (600,400);
         setDefaultCloseOperation (EXIT_ON_CLOSE);
     }
-
-
 
     private void initVentanaEmpresa() {
         JPanel panel = new JPanel ();
@@ -54,6 +51,12 @@ public class VentanaEmpresa extends JFrame {
         JTextField textAfp = new JTextField (10);
         JTextField textIsapre = new JTextField (10);
 
+        JCheckBox checkTrabajador = new JCheckBox("Trabajador");
+        labelAfp.setVisible(false);
+        labelIsapre.setVisible(false);
+        textAfp.setVisible(false);
+        textIsapre.setVisible(false);
+
 
         JButton botonAgregar = new JButton ();
         botonAgregar.setText ("Agregar Persona.");
@@ -76,6 +79,7 @@ public class VentanaEmpresa extends JFrame {
         panel.add (botonAgregar);
         panel.add (botonLimpiar);
         panel.add (botonSalir);
+        panel.add(checkTrabajador);
 
         this.add (panel);
         botonAgregar.addActionListener (new ActionListener () {
@@ -101,6 +105,23 @@ public class VentanaEmpresa extends JFrame {
                 textRut.setText(null);
             }
         });
+        checkTrabajador.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                labelAfp.setVisible(true);
+                labelIsapre.setVisible(true);
+                textAfp.setVisible(true);
+                textIsapre.setVisible(true);
+                if (!checkTrabajador.isSelected()){
+                    labelAfp.setVisible(false);
+                    labelIsapre.setVisible(false);
+                    textAfp.setVisible(false);
+                    textIsapre.setVisible(false);
+                }
+            }
+        });
+
+
 
     }
 }
